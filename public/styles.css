@@ -1,0 +1,19 @@
+html{
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 80px;
+    background-image: url("./images/newspaper1.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.jumbotron {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    padding: 0;
+}
