@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>WSJ Scraper</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css">
-    
+
 </head>
+
 <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Wall Street Journal Scraper</a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-                aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">Wall Street Journal Scraper</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/saved">Saved Articles</a>
+                        <a class="btn btn-warning new-scrape">Find New Articles</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-secondary new-scrape">Find New Articles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-secondary clear">Clear Articles</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                <li class="nav-item">
+                    <a class="btn btn-success savedArticle">Saved Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-warning clear">Clear Articles</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="bg">
+        <img src="./images/newspaper1.jpg" alt="newspaper on fire">
+    </div>
     <div class="jumbotron text-center">
         <div class="overlay"></div>
         <div class="background-image"></div>
         <div class="caption">
             <h1>Wall Street Journal Scraper</h1>
         </div>
-    </div>    
-        
+    </div>
+
     <div id="wrapper">
-       
+
         <div id="articles"></div>
-        <div id="notes"></div>
 
-      </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="app.js"></script>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
