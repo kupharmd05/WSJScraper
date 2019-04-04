@@ -10,6 +10,16 @@ $(document).ready(function () {
     }}
   )};
 
+  function getSaved() {
+    $.getJSON("/saved", function (data) {
+      // For each one
+      for (var i = 0; i < 20; i++) {
+        // Display the information on the page
+        $("#articles").append("<div class='article'><a href =" + data[i].link + "<p class='articleTitle'>" + data[i].title + "</a><br><p class='summary'>"+data[i].summary +"</p>" + "<a class='btn btn-success save' data-id='"+data[i]._id +"'> Save </a></p></div>");
+  
+      }}
+    )};
+
   $(".new-scrape").on("click", function (event) {
     event.preventDefault();
     $("#articles").empty();
@@ -34,6 +44,8 @@ $(document).ready(function () {
 
   });
 
+
+
   $(document).on("click",".save", (event) => {
     alert("this hit")
     var articleToSave = $(this).attr("data-id");
@@ -43,6 +55,16 @@ $(document).ready(function () {
       url: "/saved/" + articleToSave
     }).then(function(data){
       console.log(data);
+    })
+  })
+
+  $(".savedArticle").on("click", function (event) {
+    event.preventDefault();
+    $("#articles").empty();
+    $.get("/saved").then(function (data) {
+      console.log(data);
+      getSaved();
+      
     })
   })
 
