@@ -50,12 +50,25 @@ a {
    text-align: center;
 }
 
+.card {
+    width: 25%;
+    background-color: transparent;
+}
+
+.card-header {
+    background-color: white;
+    opacity: 0.6;
+}
+
+
+
 .summary {
     color: black;
 }
 
 
-.btn {
+.btn-success {
     margin-left: 10px;
+    margin-right: 10px;
 }
 

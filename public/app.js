@@ -3,9 +3,9 @@ $(document).ready(function () {
   function getArticles() {
   $.getJSON("/articles", function (data) {
     // For each one
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 10; i++) {
       // Display the information on the page
-      $("#articles").append("<div class='article'><a href =" + data[i].link + "<p class='articleTitle'>" + data[i].title + "</a><br><p class='summary'>"+data[i].summary +"</p>" + "<a class='btn btn-success save' data-id='"+data[i]._id +"'> Save </a></p></div>");
+      $("#articles").append("<div class='article card mb-3'><a href =" + data[i].link + "<p class='articleTitle card-header'>" + data[i].title + "</a><br><div class='summary card-body'>"+data[i].summary +"</div>" + "<a class='btn btn-success save' data-id='"+data[i]._id +"'> Save </a></p></div>");
 
     }}
   )};
@@ -15,7 +15,7 @@ $(document).ready(function () {
       // For each one
       for (var i = 0; i < 20; i++) {
         // Display the information on the page
-        $("#articles").append("<div class='article'><a href =" + data[i].link + "<p class='articleTitle'>" + data[i].title + "</a><br><p class='summary'>"+data[i].summary +"</p>" + "<a class='btn btn-success save' data-id='"+data[i]._id +"'> Save </a></p></div>");
+        $("#articles").append("<div class='article'><a href =" + data[i].link + "<p class='articleTitle'>" + data[i].title + "</a><br><p class='summary'>"+data[i].summary +"</p>" + "<a class='btn btn-success save' dataId='"+data[i]._id +"'> Save </a></p></div>");
   
       }}
     )};
@@ -48,7 +48,9 @@ $(document).ready(function () {
 
   $(document).on("click",".save", (event) => {
     alert("this hit")
+   
     var articleToSave = $(this).attr("data-id");
+    console.log(articleToSave);
 
     $.ajax({
       method: "POST",
