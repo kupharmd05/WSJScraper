@@ -5,7 +5,7 @@ $(document).ready(function () {
       // For each one
       for (var i = 0; i < 10; i++) {
         // Display the information on the page
-        $("#articles").append("<div class='article card mb-3'><a href =" + data[i].link + "<p class='articleTitle card-header'>" + data[i].title + "</a><br><div class='summary card-body'>" + data[i].summary + "</div>" + "<a class='btn btn-success save' data-id='" + data[i]._id + "'> Save </a></p></div>");
+        $("#articles").append("<div class='article card mb-3'><a href =" + data[i].link + "<p class='articleTitle card-header'>" + data[i].title + "</a><br><div class='summary card-body' data-id=" + data[i]._id + ">" + data[i].summary + "</div>" + "<a class='btn btn-success save' data-id=" + data[i]._id + "> Save </a></p></div>");
 
       }
     }
@@ -106,13 +106,13 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data);
         // The title of the article
-        $("#notes").append("<h2>" + data.title + "</h2>");
+        $("#notes").append("<h2>" + data.title + "</h2><input id='titleinput' name='title' placeholder=Title><textarea id='bodyinput' name='body '></textarea><button data-id='" + data._id + "' id='savenote'>Save Note</button>");
         // An input to enter a new title
-        $("#notes").append("<input id='titleinput' name='title' >");
-        // A textarea to add a new note body
-        $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
-        // A button to submit a new note, with the id of the article saved to it
-        $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+        // $("#notes").append("<input id='titleinput' name='title' placeholder=Title>");
+        // // A textarea to add a new note body
+        // $("#notes").append("<textarea id='bodyinput' name='body '></textarea>");
+        // // A button to submit a new note, with the id of the article saved to it
+        // $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
         // If there's a note in the article
         if (data.note) {
