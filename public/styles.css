@@ -44,12 +44,6 @@ a {
     
 }
 
-
-.article {
-    
-   text-align: center;
-}
-
 .card {
     width: 25%;
     background-color: transparent;
@@ -60,6 +54,10 @@ a {
     opacity: 0.6;
 }
 
+#articles {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 .summary {
