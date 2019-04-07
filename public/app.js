@@ -56,7 +56,7 @@ $(document).ready(function () {
 
     var articleToSave = $(this).attr("data-id");
     console.log($(this).attr("data-id"));
-
+    $(this).parents(".card").remove();
     $.ajax({
       method: "PUT",
       url: "/saved/" + articleToSave
@@ -70,6 +70,7 @@ $(document).ready(function () {
 
     var articleToSave = $(this).attr("data-id");
     console.log($(this).attr("data-id"));
+    $(this).parents(".card").remove();
 
     $.ajax({
       method: "PUT",
