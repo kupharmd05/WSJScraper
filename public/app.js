@@ -83,6 +83,7 @@ $(document).ready(function () {
   $(".savedArticle").on("click", function (event) {
     event.preventDefault();
     $("#articles").empty();
+    $("#notes").empty();
     $.get("/saved").then(function (data) {
       console.log(data);
       getSaved();
