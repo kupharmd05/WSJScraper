@@ -17,7 +17,7 @@ $(document).ready(function () {
       // For each one
       for (var i = 0; i < 20; i++) {
         // Display the information on the page
-        $("#articles").append("<div class='article card mb-3'><a href =" + data[i].link + "<p class='articleTitle card-header'>" + data[i].title + "</a><br><div class='summary card-body' data-id='" + data[i]._id + "'>" + data[i].summary + "</div>" + "<a class='btn btn-success remove' data-id='" + data[i]._id + "'> Remove </a></p></div>");
+        $("#articles").append("<div class='article card mb-3'><a href =" + data[i].link + "<p class='articleTitle card-header font-weight-bold'>" + data[i].title + "</a><br><div class='summary card-body' data-id='" + data[i]._id + "'>" + data[i].summary + "</div>" + "<a class='btn btn-success remove' data-id='" + data[i]._id + "'> Remove </a></p></div>");
 
       }
     }
