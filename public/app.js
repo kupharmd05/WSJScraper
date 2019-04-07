@@ -5,7 +5,7 @@ $(document).ready(function () {
       // For each one
       for (var i = 0; i < 10; i++) {
         // Display the information on the page
-        $("#articles").append("<div class='article card mb-3'><a href =" + data[i].link + "<p class='articleTitle card-header'>" + data[i].title + "</a><br><div class='summary card-body' data-id=" + data[i]._id + ">" + data[i].summary + "</div>" + "<a class='btn btn-success save' data-id=" + data[i]._id + "> Save </a></p></div>");
+        $("#articles").append("<div class='article card mb-3'><a href =" + data[i].link + "<p class='articleTitle card-header font-weight-bold'>" + data[i].title + "</a><br><div class='summary card-body' data-id=" + data[i]._id + ">" + data[i].summary + "</div>" + "<a class='btn btn-success save' data-id=" + data[i]._id + "> Save </a><br><a class='btn btn-success note' data-id=" + data[i]._id + "> Add Note </a></p></div>");
 
       }
     }
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
 
 
-  $(document).on("click", ".save", function (event) {
+  $(document).on("click", ".save", function () {
 
 
     var articleToSave = $(this).attr("data-id");
@@ -90,7 +90,7 @@ $(document).ready(function () {
     })
   })
 
-  $(document).on("click", ".card-body", function () {
+  $(document).on("click", ".note", function () {
     // Empty the notes from the note section
     $("#notes").empty();
     // Save the id from the p tag
@@ -106,7 +106,7 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data);
         // The title of the article
-        $("#notes").append("<h2>" + data.title + "</h2><input id='titleinput' name='title' placeholder=Title><textarea id='bodyinput' name='body '></textarea><button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+        $("#notes").append("<h2>" + data.title + "</h2><input id='titleinput' name='title' placeholder = 'Note Title'><textarea id='bodyinput' name='body '></textarea><button data-id='" + data._id + "' id='savenote'>Save Note</button>");
         // An input to enter a new title
         // $("#notes").append("<input id='titleinput' name='title' placeholder=Title>");
         // // A textarea to add a new note body

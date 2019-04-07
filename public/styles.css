@@ -59,6 +59,16 @@ a {
     flex-wrap: wrap;
 }
 
+input {
+    height: 36px;
+    width: 75%
+}
+
+textarea {
+    height: 200px;
+    width: 75%;
+}
+
 
 .summary {
     color: black;
